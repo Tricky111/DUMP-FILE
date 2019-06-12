@@ -1,0 +1,189 @@
+local background = display.newRect(0, 0, 1080, 1080)
+background:setFillColor( 0/255, 100/255, 255/255)
+
+local AskTextField = display.newText( "Type The Answer In The Text Box Below.", display.contentCenterX + 1 , display.contentCenterY - 200, native.systemFont, 15)
+AskTextField.id = "AskTextField"
+AskTextField:setFillColor( 255, 255, 255 )
+
+
+local AgeTextField = native.newTextField( display.contentCenterX + 1, display.contentCenterY - 150, 300, 75 )
+AgeTextField.id = "AgeTextField"
+
+local calculateButton = display.newImageRect( "e1.png", 200, 125 )
+calculateButton.x = display.contentCenterX
+calculateButton.y = display.contentCenterY -50
+calculateButton.id = "calculateButton"
+
+
+local SubmitButton = display.newImageRect( "e3.png", 200, 50 )
+SubmitButton.x = display.contentCenterX
+SubmitButton.y = display.contentCenterY + 100
+SubmitButton.id = "SubmitButton"
+
+
+local letterText = display.newText( "Tap Generate", display.contentCenterX + 1 , display.contentCenterY +200, "Impact", 17 )
+letterText.id = "letterText"
+
+
+local AnswerText = display.newText( "", display.contentCenterX + 1 , display.contentCenterY +100, native.systemFont, 12 )
+AnswerText.id = "AnswerText"
+
+Score = 0
+
+local ScoreText = display.newText( "Your Score Is 0", display.contentCenterX + 1 , display.contentCenterY + 40, "Impact", 40 )
+ScoreText.id = "ScoreText"
+
+local function calculateButtonTouch( event )
+
+             letter = math.random(1,10)
+
+            if letter == 1 then
+                letterText.text = "What Year is It"
+
+            elseif letter == 2 then
+                letterText.text = "What Year Did WW2 Start"
+
+            elseif letter == 3 then
+                letterText.text = "What Year Did WW2 End"
+
+            elseif letter == 4 then
+                letterText.text = "What Year Did WW1 Start"
+
+            elseif letter == 5 then
+                letterText.text = "What Year Did WW1 End"
+
+            elseif letter == 6 then
+                letterText.text = "What Year Did Canada Become A Country"
+
+            elseif letter == 7 then
+                letterText.text = "What Year Did The Russian Civil War Start"
+
+            elseif letter == 8 then
+                letterText.text = "What Year Was France Invaded In WW2"
+
+            elseif letter == 9 then
+                letterText.text = "What Year Was D-Day"
+
+            elseif letter == 10 then
+                letterText.text = "What Year Was Russia Invaded In WW2"
+
+            end
+
+        end
+
+
+calculateButton:addEventListener( "touch", calculateButtonTouch )
+
+local function updateScoreText( )
+
+	if Test == 1 or Test == 2 or Test == 3 or Test == 4 or Test == 5 or Test == 6 or Test == 7 or Test == 8 or Test == 9 or Test == 10 then
+		Score = Score + 1
+		ScoreText.text = "Your Score Is "..Score
+
+	end
+end
+
+local function SubmitButtonTouch( event )
+Age = tonumber(AgeTextField.text)
+
+	 Test = 0
+
+
+	
+	if letter == 1 and Age == 2019 then
+		letterText.text = "Correct"
+		timer.performWithDelay( 20000, listener )
+		letterText.text = "What Year Did WW2 Start"
+		letter = nil
+		Test = 1
+	
+
+		elseif letter == 2 and Age == 1939 then
+			letterText.text = "Correct"
+			timer.performWithDelay( 20000, listener )
+			letterText.text = "What Year Did WW2 Start"
+			letter = nil
+			Test = 2
+		
+
+			elseif letter == 3 and Age == 1945 then
+				letterText.text = "Correct"
+				timer.performWithDelay( 20000, listener )
+				letterText.text = "What Year Did WW2 Start"
+				letter = nil
+				Test = 3
+			
+
+				elseif letter == 4 and Age == 1914 then
+					letterText.text = "Correct"
+					timer.performWithDelay( 20000, listener )
+					letterText.text = "What Year Did WW2 Start"
+					letter = nil
+					Test = 4
+				
+					elseif letter == 5 and Age == 1918 then
+						letterText.text = "Correct"
+						timer.performWithDelay( 20000, listener )
+						letterText.text = "What Year Did WW2 Start"
+						letter = nil
+						Test = 5
+					
+
+						elseif letter == 6 and Age == 1867 then
+							letterText.text = "Correct"
+							timer.performWithDelay( 20000, listener )
+							letterText.text = "What Year Did WW2 Start"
+							letter = nil
+							Test = 6
+						
+
+							elseif letter == 7 and Age == 1917 then
+								letterText.text = "Correct"
+								timer.performWithDelay( 20000, listener )
+								letterText.text = "What Year Did WW2 Start"
+								letter = nil
+								Test = 7
+							
+
+								elseif letter == 8 and Age == 1940 then
+									letterText.text = "Correct"
+									timer.performWithDelay( 20000, listener )
+									letterText.text = "What Year Did WW2 Start"
+									letter = nil
+									Test = 8
+								
+
+									elseif letter == 9 and Age == 1944 then
+										letterText.text = "Correct"
+										timer.performWithDelay( 20000, listener )
+										letterText.text = "What Year Did WW2 Start"
+										letter = nil
+										Test = 9
+									
+
+										elseif letter == 10 and Age == 1941 then
+											letterText.text = "Correct"
+											timer.performWithDelay( 20000, listener )
+											letterText.text = "What Year Did WW2 Start"
+											letter = nil
+											Test = 10
+										
+
+											elseif letter ~= Age then 
+												letterText.text = "Incorrect, Try Again"
+
+		end
+		updateScoreText()
+	end
+
+
+
+	local function GameOver( event )
+		
+if Score >= 10
+
+	end
+
+
+
+	SubmitButton:addEventListener( "touch", SubmitButtonTouch )
