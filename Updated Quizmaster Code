@@ -6,8 +6,8 @@ AskTextField.id = "AskTextField"
 AskTextField:setFillColor( 255, 255, 255 )
 
 
-local AgeTextField = native.newTextField( display.contentCenterX + 1, display.contentCenterY - 150, 300, 75 )
-AgeTextField.id = "AgeTextField"
+local EntryTextField = native.newTextField( display.contentCenterX + 1, display.contentCenterY - 150, 300, 75 )
+EntryTextField.id = "EntryTextField"
 
 local calculateButton = display.newImageRect( "e1.png", 200, 125 )
 calculateButton.x = display.contentCenterX
@@ -166,13 +166,13 @@ local function SubmitButtonTouch( event )
 
 if event.phase == "began" then
 
-Age = tonumber(AgeTextField.text)
+Entry = tonumber(EntryTextField.text)
 
 	 Test = 0
 
 
 	
-	if letter == 1 and Age == 2019 then
+	if letter == 1 and Entry == 2019 then
 		letterText.text = "Correct"
 		letter = nil
 		Test = 1
@@ -180,7 +180,7 @@ Age = tonumber(AgeTextField.text)
 
 	
 
-		elseif letter == 2 and Age == 1939 then
+		elseif letter == 2 and Entry == 1939 then
 			letterText.text = "Correct"
 			letter = nil
 			Test = 2
@@ -188,7 +188,7 @@ Age = tonumber(AgeTextField.text)
 			
 		
 
-			elseif letter == 3 and Age == 1945 then
+			elseif letter == 3 and Entry == 1945 then
 				letterText.text = "Correct"
 				letter = nil
 				Test = 3
@@ -196,55 +196,55 @@ Age = tonumber(AgeTextField.text)
 				
 			
 
-				elseif letter == 4 and Age == 1914 then
+				elseif letter == 4 and Entry == 1914 then
 						letterText.text = "Correct"
 						letter = nil
 						Test = 4
 					q4 = true
 					 
 				
-					elseif letter == 5 and Age == 1918 then
+					elseif letter == 5 and Entry == 1918 then
 						letterText.text = "Correct"
 						letter = nil
 						Test = 5
 						q5 = true
 					
 
-						elseif letter == 6 and Age == 1867 then
+						elseif letter == 6 and Entry == 1867 then
 							letterText.text = "Correct"
 							letter = nil
 							Test = 6
 							q6 = true
 						
 
-							elseif letter == 7 and Age == 1917 then
+							elseif letter == 7 and Entry == 1917 then
 								letterText.text = "Correct"
 								letter = nil
 								Test = 7
 								q7 = true
 							
 
-								elseif letter == 8 and Age == 1940 then
+								elseif letter == 8 and Entry == 1940 then
 									letterText.text = "Correct"
 									letter = nil
 									Test = 8
 									q8 = true
 								
 
-									elseif letter == 9 and Age == 1944 then
+									elseif letter == 9 and Entry == 1944 then
 										letterText.text = "Correct"
 										letter = nil
 										Test = 9
 										q9 = true
 									
 
-										elseif letter == 10 and Age == 1941 then
+										elseif letter == 10 and Entry  == 1941 then
 											letterText.text = "Correct"
 											letter = nil
 											Test = 10
 											q10 = true
 
-											 elseif letter ~= Age then
+											 elseif letter ~= Entry then
     											letterText.text = "You Got The Answer Wrong, GAME OVER"
     											ScoreText.text = "You Got A Score Of " .. Score
     											calculateButton:removeSelf()
